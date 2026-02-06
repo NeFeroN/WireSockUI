@@ -72,6 +72,24 @@ namespace WireSockUI.Config
             Dns = section.Get("DNS");
             Mtu = section.Get("MTU");
 
+            // AmneziaWG parameters (optional)
+            Jc = section.Get("Jc");
+            Jmin = section.Get("Jmin");
+            Jmax = section.Get("Jmax");
+            S1 = section.Get("S1");
+            S2 = section.Get("S2");
+            S3 = section.Get("S3");
+            S4 = section.Get("S4");
+            H1 = section.Get("H1");
+            H2 = section.Get("H2");
+            H3 = section.Get("H3");
+            H4 = section.Get("H4");
+            I1 = section.Get("I1");
+            I2 = section.Get("I2");
+            I3 = section.Get("I3");
+            I4 = section.Get("I4");
+            I5 = section.Get("I5");
+
             if (!configESections.Contains("Peer"))
                 throw new ArgumentException(
                     $"Profile {Path.GetFileName(profilePath)} does not contain an \"Peer\" section.");
@@ -343,6 +361,102 @@ namespace WireSockUI.Config
         /// </summary>
         /// <remarks>WireSock specific extension</remarks>
         public string Socks5ProxyPassword { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG junk packet count
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string Jc { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG junk packet minimum size
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string Jmin { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG junk packet maximum size
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string Jmax { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG init packet junk size 1
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string S1 { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG init packet junk size 2
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string S2 { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG init packet junk size 3
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string S3 { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG init packet junk size 4
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string S4 { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG header 1 (can be range like "664627419-2055816503")
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string H1 { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG header 2 (can be range like "2055998124-2115259558")
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string H2 { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG header 3 (can be range like "2129959140-2136758940")
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string H3 { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG header 4 (can be range like "2141503360-2144649799")
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string H4 { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG init packet data 1
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string I1 { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG init packet data 2
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string I2 { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG init packet data 3
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string I3 { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG init packet data 4
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string I4 { get; set; }
+
+        /// <summary>
+        ///     AmneziaWG init packet data 5
+        /// </summary>
+        /// <remarks>AmneziaWG specific parameter</remarks>
+        public string I5 { get; set; }
 
         internal static void ValidateKey(string section, string key, string keyValue)
         {

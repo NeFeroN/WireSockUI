@@ -115,6 +115,23 @@ namespace WireSockUI.Native
             [MarshalAs(UnmanagedType.LPStr)] public string dns; // optional
             [MarshalAs(UnmanagedType.LPStr)] public string mtu; // optional
             [MarshalAs(UnmanagedType.LPStr)] public string listen_port; // optional
+            // AmneziaWG parameters (optional)
+            [MarshalAs(UnmanagedType.LPStr)] public string jc;
+            [MarshalAs(UnmanagedType.LPStr)] public string jmin;
+            [MarshalAs(UnmanagedType.LPStr)] public string jmax;
+            [MarshalAs(UnmanagedType.LPStr)] public string s1;
+            [MarshalAs(UnmanagedType.LPStr)] public string s2;
+            [MarshalAs(UnmanagedType.LPStr)] public string s3;
+            [MarshalAs(UnmanagedType.LPStr)] public string s4;
+            [MarshalAs(UnmanagedType.LPStr)] public string h1;
+            [MarshalAs(UnmanagedType.LPStr)] public string h2;
+            [MarshalAs(UnmanagedType.LPStr)] public string h3;
+            [MarshalAs(UnmanagedType.LPStr)] public string h4;
+            [MarshalAs(UnmanagedType.LPStr)] public string i1;
+            [MarshalAs(UnmanagedType.LPStr)] public string i2;
+            [MarshalAs(UnmanagedType.LPStr)] public string i3;
+            [MarshalAs(UnmanagedType.LPStr)] public string i4;
+            [MarshalAs(UnmanagedType.LPStr)] public string i5;
         }
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
