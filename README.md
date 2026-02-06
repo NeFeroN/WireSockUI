@@ -17,8 +17,9 @@ WireSockUI is a graphical user interface (GUI) designed to simplify the setup an
 
 ## Getting Started
 1. **Download the latest release** from the [Releases](https://github.com/wiresock/WireSockUI/releases) page.
-2. **Install & Run**: Follow the installation prompts. Once installed, run the application to access the WireSockUI dashboard.
-3. **Configure**: Provide your VPN server details, credentials, and any custom settings. Save your configuration, then start or stop tunnels as needed.
+2. **Build from source**: See [BUILD.md](BUILD.md) for instructions on how to build the project yourself.
+3. **Install & Run**: Follow the installation prompts. Once installed, run the application to access the WireSockUI dashboard.
+4. **Configure**: Provide your VPN server details, credentials, and any custom settings. Save your configuration, then start or stop tunnels as needed.
 
 ## Transition to WireSock Secure Connect
 Since WireSockUI is no longer maintained, we recommend moving to [WireSock Secure Connect], which offers:
