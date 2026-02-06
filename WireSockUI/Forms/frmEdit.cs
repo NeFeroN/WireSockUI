@@ -279,6 +279,23 @@ namespace WireSockUI.Forms
                         case "postup":
                         case "predown":
                         case "postdown":
+                        // AmneziaWG parameters (all treated as strings)
+                        case "jc":
+                        case "jmin":
+                        case "jmax":
+                        case "s1":
+                        case "s2":
+                        case "s3":
+                        case "s4":
+                        case "h1":
+                        case "h2":
+                        case "h3":
+                        case "h4":
+                        case "i1":
+                        case "i2":
+                        case "i3":
+                        case "i4":
+                        case "i5":
                             break;
                         // Unrecognized keys
                         default:
