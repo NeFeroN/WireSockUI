@@ -1,0 +1,54 @@
+name: 'Manual Build and Publish'
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number (e.g., 1.0.0)'
+        required: false
+        default: '0.0.1'
+        type: string
+
+jobs:
+  build-and-package:
+    strategy:
+      matrix:
+        platform: ['AnyCPU', 'ARM64']
+        framework: ['net472-windows']
+        build_configuration: ['Release', 'Release UWP']
+        include:
+          - build_configuration: 'Release'
+            uwp_suffix: '-no-uwp'
+          - build_configuration: 'Release UWP'
+            uwp_suffix: ''
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    env:
+      ARTIFACT_ZIP_NAME: 'WireSockUI-${{ inputs.version }}-${{ matrix.platform }}${{ matrix.uwp_suffix }}'
+      ARTIFACT_SRC_PATH: 'bin/${{ matrix.platform }}/${{ matrix.build_configuration }}/${{ matrix.framework }}/publish/'
+    steps:
+      - name: Checkout from GitHub
+        uses: actions/checkout@v4
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.x'
+
+      - name: Build
+        run: dotnet publish WireSockUI/WireSockUI.csproj --configuration "${{ matrix.build_configuration }}" --framework "${{ matrix.framework }}" --no-self-contained /p:Platform="${{ matrix.platform }}" /p:Version="${{ inputs.version }}" /p:Repository="${{ github.repository }}"
+
+      - name: Create zip archive
+        shell: bash
+        run: |
+          # Exclude .pdb and .winmd files
+          cd "${{ env.ARTIFACT_SRC_PATH }}"
+          7z a -tzip "${{ github.workspace }}/${{ env.ARTIFACT_ZIP_NAME }}.zip" . -xr!*.pdb -xr!*.winmd
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: '${{ env.ARTIFACT_ZIP_NAME }}'
+          path: '${{ env.ARTIFACT_ZIP_NAME }}.zip'
+          if-no-files-found: error
