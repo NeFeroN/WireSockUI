@@ -32,24 +32,6 @@ namespace WireSockUI.Config
         private string _publicKey;
         private string _socks5Proxy;
 
-        // AmneziaWG parameters
-        private string _jc;
-        private string _jmin;
-        private string _jmax;
-        private string _s1;
-        private string _s2;
-        private string _s3;
-        private string _s4;
-        private string _h1;
-        private string _h2;
-        private string _h3;
-        private string _h4;
-        private string _i1;
-        private string _i2;
-        private string _i3;
-        private string _i4;
-        private string _i5;
-
         /// <summary>
         ///     Create an empty profile from scratch
         /// </summary>
@@ -384,161 +366,97 @@ namespace WireSockUI.Config
         ///     AmneziaWG junk packet count
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string Jc
-        {
-            get => _jc;
-            set => _jc = value;
-        }
+        public string Jc { get; set; }
 
         /// <summary>
         ///     AmneziaWG junk packet minimum size
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string Jmin
-        {
-            get => _jmin;
-            set => _jmin = value;
-        }
+        public string Jmin { get; set; }
 
         /// <summary>
         ///     AmneziaWG junk packet maximum size
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string Jmax
-        {
-            get => _jmax;
-            set => _jmax = value;
-        }
+        public string Jmax { get; set; }
 
         /// <summary>
         ///     AmneziaWG init packet junk size 1
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string S1
-        {
-            get => _s1;
-            set => _s1 = value;
-        }
+        public string S1 { get; set; }
 
         /// <summary>
         ///     AmneziaWG init packet junk size 2
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string S2
-        {
-            get => _s2;
-            set => _s2 = value;
-        }
+        public string S2 { get; set; }
 
         /// <summary>
         ///     AmneziaWG init packet junk size 3
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string S3
-        {
-            get => _s3;
-            set => _s3 = value;
-        }
+        public string S3 { get; set; }
 
         /// <summary>
         ///     AmneziaWG init packet junk size 4
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string S4
-        {
-            get => _s4;
-            set => _s4 = value;
-        }
+        public string S4 { get; set; }
 
         /// <summary>
         ///     AmneziaWG header 1 (can be range like "664627419-2055816503")
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string H1
-        {
-            get => _h1;
-            set => _h1 = value;
-        }
+        public string H1 { get; set; }
 
         /// <summary>
         ///     AmneziaWG header 2 (can be range like "2055998124-2115259558")
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string H2
-        {
-            get => _h2;
-            set => _h2 = value;
-        }
+        public string H2 { get; set; }
 
         /// <summary>
         ///     AmneziaWG header 3 (can be range like "2129959140-2136758940")
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string H3
-        {
-            get => _h3;
-            set => _h3 = value;
-        }
+        public string H3 { get; set; }
 
         /// <summary>
         ///     AmneziaWG header 4 (can be range like "2141503360-2144649799")
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string H4
-        {
-            get => _h4;
-            set => _h4 = value;
-        }
+        public string H4 { get; set; }
 
         /// <summary>
         ///     AmneziaWG init packet data 1
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string I1
-        {
-            get => _i1;
-            set => _i1 = value;
-        }
+        public string I1 { get; set; }
 
         /// <summary>
         ///     AmneziaWG init packet data 2
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string I2
-        {
-            get => _i2;
-            set => _i2 = value;
-        }
+        public string I2 { get; set; }
 
         /// <summary>
         ///     AmneziaWG init packet data 3
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string I3
-        {
-            get => _i3;
-            set => _i3 = value;
-        }
+        public string I3 { get; set; }
 
         /// <summary>
         ///     AmneziaWG init packet data 4
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string I4
-        {
-            get => _i4;
-            set => _i4 = value;
-        }
+        public string I4 { get; set; }
 
         /// <summary>
         ///     AmneziaWG init packet data 5
         /// </summary>
         /// <remarks>AmneziaWG specific parameter</remarks>
-        public string I5
-        {
-            get => _i5;
-            set => _i5 = value;
-        }
+        public string I5 { get; set; }
 
         internal static void ValidateKey(string section, string key, string keyValue)
         {
